@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './Products.module.css';
 import productData from '../../data/productCategories.json';
 
 export default function Products() {
+  const location = useLocation();
   const [activeCategories, setActiveCategories] = useState(['management']);
   const [expandedCategories, setExpandedCategories] = useState(['management']);
   const [activeProduct, setActiveProduct] = useState(null);
@@ -10,11 +12,40 @@ export default function Products() {
   const productCategories = productData.productCategories;
 
   useEffect(() => {
-    // Set the first product as active by default
-    if (productCategories.length > 0 && productCategories[0].products.length > 0) {
-      setActiveProduct(productCategories[0].products[0]);
+    // Scroll to top when component mounts or navigation state changes
+    window.scrollTo(0, 0);
+    
+    // Check if navigation state contains a selected category and/or product
+    const selectedCategory = location.state?.selectedCategory;
+    const selectedProductName = location.state?.selectedProductName;
+    
+    if (selectedCategory) {
+      // Set the selected category as active and expanded
+      setActiveCategories([selectedCategory]);
+      setExpandedCategories([selectedCategory]);
+      
+      // Find the category and set the specific product as active
+      const category = productCategories.find(cat => cat.id === selectedCategory);
+      if (category && category.products.length > 0) {
+        if (selectedProductName) {
+          // Find the specific product by name
+          const specificProduct = category.products.find(product => product.name === selectedProductName);
+          if (specificProduct) {
+            setActiveProduct(specificProduct);
+          } else {
+            setActiveProduct(category.products[0]); // Fallback to first product
+          }
+        } else {
+          setActiveProduct(category.products[0]); // Default to first product in category
+        }
+      }
+    } else {
+      // Default behavior - set the first product as active
+      if (productCategories.length > 0 && productCategories[0].products.length > 0) {
+        setActiveProduct(productCategories[0].products[0]);
+      }
     }
-  }, []);
+  }, [location.state]);
 
   const handleCategoryClick = (categoryId) => {
     // Toggle active state
@@ -55,14 +86,13 @@ export default function Products() {
                 >
                   {category.name}
                 </div>
-
-                {/* Dropdown Menu */}
                 {expandedCategories.includes(category.id) && (
-                  <div className={styles.dropdown}>
+                  <div className={styles.productList}>
                     {category.products.map((product, index) => (
                       <div
                         key={index}
-                        className={`${styles.productItem} ${activeProduct && activeProduct.name === product.name ? styles.activeProduct : ''}`}
+                        className={`${styles.productItem} ${activeProduct === product ? styles.active : ''
+                          }`}
                         onClick={() => setActiveProduct(product)}
                       >
                         <div className={styles.productTitle}>{product.name}</div>

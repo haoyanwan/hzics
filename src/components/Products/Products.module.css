@@ -12,72 +12,6 @@
     align-items: center;
 }
 
-.productsPage::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.productsPage > * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Title */
-.title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: #1e3a8a;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.description {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: #64748b;
-  line-height: 1.6;
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
-}
-
-/* Banner */
-.banner {
-    width: 100%;
-    max-width: 1535px;
-    margin: 2rem auto 2rem auto;
-    z-index: 5;
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 
-        0 4px 20px rgba(31, 38, 135, 0.15),
-        0 2px 8px rgba(59, 130, 246, 0.1);
-}
-
-.bannerImage {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-    display: block;
-}
-
-.productsPage .layoutContainer {
-    display: flex;
-    width: 100%;
-    max-width: 1600px;
-    height: 100%;
-    gap: 0;
-}
-
 /* Enhanced animated backgrounds like home page */
 .productsPage::before {
     content: '';
@@ -95,8 +29,56 @@
     transition: opacity 0.3s ease;
 }
 
+@keyframes floatBackground {
+    0%, 100% { 
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 0.3;
+    }
+    25% { 
+        transform: translateX(30px) translateY(-20px) scale(1.05);
+        opacity: 0.4;
+    }
+    50% { 
+        transform: translateX(-20px) translateY(30px) scale(0.95);
+        opacity: 0.5;
+    }
+    75% { 
+        transform: translateX(20px) translateY(10px) scale(1.02);
+        opacity: 0.3;
+    }
+}
 
+.productsPage > * {
+    position: relative;
+    z-index: 2;
+}
 
+/* Title */
+.title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #1e3a8a;
+    margin-bottom: 1rem;
+    text-align: center;
+    z-index: 2;
+}
+
+.description {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: #64748b;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    z-index: 2;
+}
+
+.productsPage .layoutContainer {
+    display: flex;
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+    gap: 0;
+}
 
 /* Navigation Container */
 .navigation {
@@ -119,10 +101,11 @@
     align-self: flex-start;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE 10+ */
-    .navigation::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
-    };
     max-height: 92.5%;
+}
+
+.navigation::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
 
 /* Category Navigation */
@@ -133,6 +116,8 @@
     gap: 0.5rem;
     padding: 0;
     transition: all 0.3s cubic-bezier(.07,.74,.49,.98);
+    height: 100%;
+    overflow-y: auto;
 }
 
 /* Category Wrapper */
@@ -196,15 +181,27 @@
     font-weight: 600;
 }
 
-
 /* Dropdown Menu */
-.dropdown {
+.productList {
     padding: 0.5rem 0 0.5rem 0.5rem;
     margin-top: 0.5rem;
     margin-left: 1rem;
     margin-bottom: 0rem;
     animation: slideDown 0.3s ease-out;
     overflow: hidden;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 300px;
+    }
 }
 
 .productItem {
@@ -218,8 +215,6 @@
     margin: 0.1rem 0;
 }
 
-
-
 .productItem::before {
     content: '';
     position: absolute;
@@ -231,7 +226,6 @@
     background: #3b82f6;
     transition: all 0.3s ease;
 }
-
 
 .productItem:hover::before {
     width: 12px;
@@ -250,27 +244,16 @@
     margin-bottom: 0.2rem;
 }
 
-.productItem.activeProduct .productTitle {
+.productItem.active .productTitle {
     font-weight: 900;
     color: #1e40af;
     font-size: 1rem;
 }
 
-.productItem.activeProduct::before {
+.productItem.active::before {
     width: 12px;
-    
     background: #1e40af;
 }
-
-
-.productDescription {
-    font-size: 0.75rem;
-    color: #64748b;
-    line-height: 1.3;
-    font-style: italic;
-}
-
-
 
 /* Content Area */
 .contentArea {
@@ -282,8 +265,6 @@
     transition: all 0.3s cubic-bezier(.07,.74,.49,.98);
     align-self: flex-start;
 }
-
-
 
 .pdfViewer {
     width: 100%;
@@ -299,94 +280,106 @@
 }
 
 .contentPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 3rem;
     text-align: center;
-    padding: 4rem 2rem;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    border: 2px dashed rgba(59, 130, 246, 0.3);
-    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .placeholderTitle {
     font-size: 2rem;
-    color: #64748b;
+    color: #1e3a8a;
     margin-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .placeholderText {
-    font-size: 1.1rem;
-    color: #94a3b8;
+    font-size: 1.2rem;
+    color: #64748b;
     line-height: 1.6;
+    max-width: 400px;
 }
 
-/* Animations */
-@keyframes slideDown {
-    0% {
-        max-height: 0;
-        opacity: 0;
-      
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .productsPage .layoutContainer {
+        flex-direction: column;
+        height: auto;
+        gap: 1.5rem;
     }
-    100% {
-        max-height: 500px;
-        opacity: 1;
-       
-    }
-}
-
-@keyframes floatBackground {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(-30px, -30px) rotate(1deg); }
-    66% { transform: translate(30px, -20px) rotate(-1deg); }
-}
-
-
-
-@keyframes float {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-10vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-
-
-
-/* Ensure navigation stays alongside content at all screen sizes */
-.productsPage .layoutContainer {
-    flex-direction: row;
-    gap: 0;
-    min-height: 0;
-}
-
-/* For very small screens, adjust padding and spacing but keep side-by-side layout */
-@media (max-width: 768px) {
+    
     .navigation {
-        padding: 1rem 0.5rem;
-        margin: 1rem 0.5rem 1rem 1rem;
+        max-width: none;
+        min-width: auto;
+        height: 300px;
+        margin: 0 0 1.5rem 0;
     }
     
     .contentArea {
-        padding: 1rem 0.5rem;
-        margin: 1rem 1rem 1rem 0.5rem;
+        height: 60vh;
+        min-height: 400px;
+        margin: 0;
+    }
+    
+    .pdfViewer,
+    .contentPlaceholder {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .productsPage {
+        padding: 6rem 1rem 2rem;
+    }
+    
+    .productsPage .layoutContainer {
+        gap: 1rem;
+    }
+    
+    .navigation {
+        height: 250px;
+        padding: 1rem;
+        margin: 0 0 1rem 0;
+    }
+    
+    .contentArea {
+        height: 50vh;
+        min-height: 300px;
+    }
+    
+    .pdfViewer,
+    .contentPlaceholder {
+        height: 50vh;
     }
     
     .categoryItem {
-        font-size: 0.9rem;
-        padding: 0.8rem 0;
+        padding: 0.5rem 0;
+        font-size: 1rem;
+    }
+    
+    .productItem {
+        padding: 0.2rem 0 0.2rem 1.2rem;
     }
     
     .productTitle {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .placeholderTitle {
+        font-size: 1.5rem;
+    }
+    
+    .placeholderText {
+        font-size: 1rem;
     }
 }

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import styles from './Solutions.module.css';
 import solutionData from '../../data/solutionCategories.json';
 
 export default function Home() {
-    const [activeCategories, setActiveCategories] = useState(['management']);
+  const location = useLocation();
+  const [activeCategories, setActiveCategories] = useState(['management']);
   const [expandedCategories, setExpandedCategories] = useState(['management']);
   const [activeProduct, setActiveProduct] = useState(null);
 
@@ -13,11 +15,29 @@ export default function Home() {
   }));
 
   useEffect(() => {
-    // Set the first product as active by default
-    if (productCategories.length > 0 && productCategories[0].products.length > 0) {
-      setActiveProduct(productCategories[0].products[0]);
+    // Scroll to top when component mounts or navigation state changes
+    window.scrollTo(0, 0);
+    
+    // Check if navigation state contains a selected category
+    const selectedCategory = location.state?.selectedCategory;
+    
+    if (selectedCategory) {
+      // Set the selected category as active and expanded
+      setActiveCategories([selectedCategory]);
+      setExpandedCategories([selectedCategory]);
+      
+      // Find the category and set the first product as active
+      const category = productCategories.find(cat => cat.id === selectedCategory);
+      if (category && category.products.length > 0) {
+        setActiveProduct(category.products[0]);
+      }
+    } else {
+      // Default behavior - set the first product as active
+      if (productCategories.length > 0 && productCategories[0].products.length > 0) {
+        setActiveProduct(productCategories[0].products[0]);
+      }
     }
-  }, []);
+  }, [location.state]);
 
   const handleCategoryClick = (categoryId) => {
     // Toggle active state

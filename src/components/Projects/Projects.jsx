@@ -24,7 +24,11 @@ export default function Projects() {
     const categoryProjects = category === 'all' 
       ? meetingProjectsData.meetingProjects 
       : meetingProjectsData.meetingProjects.filter(project => project.category === category);
-    setSelectedProject(categoryProjects[0]);
+    
+    // Ensure we have projects to select from
+    if (categoryProjects.length > 0) {
+      setSelectedProject(categoryProjects[0]);
+    }
   };
 
   // Handle navigation from home page via URL hash
@@ -39,9 +43,7 @@ export default function Projects() {
           setSelectedProject(project);
           // Update category filter to show the project's category or 'all'
           const projectCategory = project.category;
-          if (selectedCategory !== 'all' && selectedCategory !== projectCategory) {
-            setSelectedCategory('all');
-          }
+          setSelectedCategory('all');
         }
       }
     };
@@ -52,7 +54,7 @@ export default function Projects() {
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
-  }, [selectedCategory]);
+  }, []); // Remove selectedCategory from dependencies to prevent infinite loop
 
   return (
     <div className={styles.projectsPage}>
