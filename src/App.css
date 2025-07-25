@@ -19,9 +19,12 @@
   min-height: 60px;
   padding: 0;
   z-index: 100;
-  transition: all 0.3s ease;
+  transition: all 0.7s cubic-bezier(.07,.74,.49,.98);
 }
 
+.react-flow__handle {
+  display: none !important;
+}
 
 .header-content {
   display: flex;
@@ -39,7 +42,7 @@
 .logo {
   height: 40px;
   width: auto;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.7s cubic-bezier(.07,.74,.49,.98);
 }
 
 
@@ -59,7 +62,7 @@
   font-weight: 500;
   font-size: 0.95rem;
   letter-spacing: 0.025em;
-  transition: all 0.3s ease;
+  transition: all 0.7s cubic-bezier(.07,.74,.49,.98);
   position: relative;
   border-radius: 6px;
 }
@@ -78,7 +81,7 @@
   width: 0;
   height: 3px;
   background: #1e3a8a; /* 深蓝色 */
-  transition: width 0.3s ease;
+  transition: width 0.5s cubic-bezier(.07,.74,.49,.98);
   border-radius: 3px 3px 0 0;
 }
 
@@ -105,7 +108,7 @@
   text-align: center;
   color: #64748b;
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  transition: color 0.5s cubic-bezier(.07,.74,.49,.98);
 }
 
 .app-footer:hover {

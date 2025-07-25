@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
+import navigationData from './data/navigation.json';
 import Home from './components/Home';
 import Solutions from './components/Solutions';
 import Products from './components/Products';
@@ -34,17 +35,16 @@ function App() {
         <header className="app-header">
           <div className="header-content">
             <div className="logo-container">
-              <img src="/images/logo.png" alt="公司标志" className="logo" />
+              <img src="/images/branding/logo.png" alt="公司标志" className="logo" />
             </div>
             <nav>
               <ul className="nav-links">
-                <NavLink to="/">首页</NavLink>
-                <NavLink to="/solutions">应用方案</NavLink>
-                <NavLink to="/products">产品与服务</NavLink>
-                <NavLink to="/projects">工程案例</NavLink>
-                <NavLink to="/news">新闻资讯</NavLink>
-                <NavLink to="/about">关于我们</NavLink>
-                <NavLink to="/contact">联系我们</NavLink>
+                {navigationData.navigationItems
+                  .sort((a, b) => a.order - b.order)
+                  .map(item => (
+                    <NavLink key={item.id} to={item.path}>{item.label}</NavLink>
+                  ))
+                }
               </ul>
             </nav>
           </div>

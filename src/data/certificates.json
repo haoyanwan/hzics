@@ -1,0 +1,52 @@
+{
+  "certificates": [
+    {
+      "id": 1,
+      "name": "ISO9001质量管理体系认证",
+      "description": "国际标准化组织认证的质量管理体系证书",
+      "image": "/images/certificates/ISO9001认证中文版 002.jpg",
+      "year": "2023",
+      "category": "质量认证"
+    },
+    {
+      "id": 2,
+      "name": "高新技术企业证书",
+      "description": "国家级高新技术企业认定证书",
+      "image": "/images/certificates/高新科技企业证书.jpg",
+      "year": "2024",
+      "category": "企业资质"
+    },
+    {
+      "id": 3,
+      "name": "会智商标证书",
+      "description": "会智品牌商标注册证书",
+      "image": "/images/certificates/会智商标证书-小.jpg",
+      "year": "2022",
+      "category": "知识产权"
+    },
+    {
+      "id": 4,
+      "name": "智能会议会务管理软件著作权",
+      "description": "智能会议会务管理软件V1.0著作权证书",
+      "image": "/images/certificates/2018智能会议会务管理软件V1.0.jpg",
+      "year": "2018",
+      "category": "软件著作权"
+    },
+    {
+      "id": 5,
+      "name": "智能证卡编辑排版系统著作权",
+      "description": "智能证卡编辑排版系统V3.0著作权证书",
+      "image": "/images/certificates/2022智能证卡编辑排版系统V3.0.jpg",
+      "year": "2022",
+      "category": "软件著作权"
+    },
+    {
+      "id": 6,
+      "name": "通道式RFID签到管理系统著作权",
+      "description": "通道式（RFID）签到管理系统V3.0著作权证书",
+      "image": "/images/certificates/2022通道式（RFID）签到管理系统V3.0.jpg",
+      "year": "2022",
+      "category": "软件著作权"
+    }
+  ]
+}

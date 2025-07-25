@@ -1,0 +1,160 @@
+{
+  "solutionCategories": [
+    {
+      "id": "management",
+      "name": "会议管理解决方案",
+      "solutions": [
+        {
+          "name": "云服务后台管理解决方案",
+          "description": "基于JavaEE技术的企业级云平台管理系统",
+          "pdf": "/docs/1、H5会议邀请报名、二维码签到管理系统3.pdf"
+        },
+        {
+          "name": "智能事务管控解决方案",
+          "description": "高效协同办公体系，支持多场景应用",
+          "pdf": null
+        },
+        {
+          "name": "会议议程管理解决方案",
+          "description": "无线平板互联，实时双向通信技术",
+          "pdf": null
+        },
+        {
+          "name": "会议流程控制解决方案",
+          "description": "智能化会议流程管理与控制",
+          "pdf": null
+        }
+      ]
+    },
+    {
+      "id": "signing",
+      "name": "签到认证解决方案",
+      "solutions": [
+        {
+          "name": "智能现场签到解决方案",
+          "description": "支持多种签到方式的现场管理系统",
+          "pdf": null
+        },
+        {
+          "name": "RFID无感签到解决方案",
+          "description": "基于射频识别的无接触签到解决方案",
+          "pdf": null
+        },
+        {
+          "name": "生物识别签到解决方案",
+          "description": "指纹、人脸识别等生物特征识别",
+          "pdf": null
+        },
+        {
+          "name": "移动端签到解决方案",
+          "description": "微信小程序、手机APP签到方式",
+          "pdf": null
+        }
+      ]
+    },
+    {
+      "id": "interactive",
+      "name": "互动交流解决方案",
+      "solutions": [
+        {
+          "name": "无线投票表决解决方案",
+          "description": "实时投票统计与结果展示",
+          "pdf": null
+        },
+        {
+          "name": "会议互动平台解决方案",
+          "description": "在线问答、实时讨论功能",
+          "pdf": null
+        },
+        {
+          "name": "现场抽奖解决方案",
+          "description": "多样化抽奖方式增加互动性",
+          "pdf": null
+        },
+        {
+          "name": "电子评审解决方案",
+          "description": "专业评审流程管理工具",
+          "pdf": null
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "移动服务解决方案",
+      "solutions": [
+        {
+          "name": "会议专属APP解决方案",
+          "description": "定制化移动会议服务应用",
+          "pdf": null
+        },
+        {
+          "name": "微信服务集成解决方案",
+          "description": "基于微信生态的会议服务",
+          "pdf": null
+        },
+        {
+          "name": "移动数据同步解决方案",
+          "description": "实时数据同步与信息推送",
+          "pdf": null
+        },
+        {
+          "name": "移动办公助手解决方案",
+          "description": "便捷的移动办公解决方案",
+          "pdf": null
+        }
+      ]
+    },
+    {
+      "id": "analytics",
+      "name": "数据分析解决方案",
+      "solutions": [
+        {
+          "name": "会议数据统计解决方案",
+          "description": "全面的参会数据分析报告",
+          "pdf": null
+        },
+        {
+          "name": "智能报表生成解决方案",
+          "description": "自动化报表生成与导出",
+          "pdf": null
+        },
+        {
+          "name": "趋势分析工具解决方案",
+          "description": "历史数据对比与趋势预测",
+          "pdf": null
+        },
+        {
+          "name": "业务洞察平台解决方案",
+          "description": "深度业务数据分析平台",
+          "pdf": null
+        }
+      ]
+    },
+    {
+      "id": "hardware",
+      "name": "硬件解决方案",
+      "solutions": [
+        {
+          "name": "智能证卡制作解决方案",
+          "description": "高效现场制证解决方案",
+          "pdf": null
+        },
+        {
+          "name": "RFID读写解决方案",
+          "description": "专业RFID读写器及配套设备",
+          "pdf": null
+        },
+        {
+          "name": "会议显示解决方案",
+          "description": "大屏显示、投影等展示方案",
+          "pdf": null
+        },
+        {
+          "name": "网络通信解决方案",
+          "description": "稳定的网络基础设施方案",
+          "pdf": null
+        }
+      ]
+    }
+  ]
+}

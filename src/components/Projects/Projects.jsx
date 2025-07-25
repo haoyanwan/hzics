@@ -1,8 +1,10 @@
+import styles from './Projects.module.css';
+
 export default function Projects() {
   return (
-    <div className="home-page">
-      <h1>Home Page</h1>
-      <p>Welcome to our website! This is the home page content.</p>
+    <div className={styles.projectsPage}>
+      <h1 className={styles.title}>项目案例</h1>
+      <p className={styles.content}>我们的项目案例正在整理中，敬请期待。</p>
     </div>
   );
 }

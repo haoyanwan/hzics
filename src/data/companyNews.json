@@ -1,0 +1,31 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "date": "2024年7月",
+      "title": "会智通新一代无纸化会议系统正式发布",
+      "summary": "经过两年精心研发，我们全新推出的无纸化会议系统集成了AI智能语音识别、实时翻译、云端同步等前沿技术，为政府机构和企业客户提供更加高效便捷的会议管理体验。",
+      "image": "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2226&q=80",
+      "imageAlt": "会议室科技",
+      "link": "#"
+    },
+    {
+      "id": 2,
+      "date": "2024年6月",
+      "title": "获得国家高新技术企业认定证书",
+      "summary": "广州会智智能科技有限公司正式获得国家高新技术企业认定证书，这标志着公司在技术创新能力和研发实力方面得到了国家权威机构的认可，为公司未来发展奠定了坚实基础。",
+      "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "imageAlt": "团队合作",
+      "link": "#"
+    },
+    {
+      "id": 3,
+      "date": "2024年5月",
+      "title": "参加第十五届中国国际会议展览会",
+      "summary": "公司携最新研发的智能会议系统产品亮相第十五届中国国际会议展览会，吸引了众多政府机构和企业客户的关注。现场展示了我们在会议信息化领域的最新技术成果。",
+      "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+      "imageAlt": "展会现场",
+      "link": "#"
+    }
+  ]
+}

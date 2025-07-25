@@ -1,0 +1,46 @@
+{
+  "navigationItems": [
+    {
+      "id": "home",
+      "path": "/",
+      "label": "首页",
+      "order": 1
+    },
+    {
+      "id": "solutions",
+      "path": "/solutions",
+      "label": "应用方案",
+      "order": 2
+    },
+    {
+      "id": "products",
+      "path": "/products",
+      "label": "产品与服务",
+      "order": 3
+    },
+    {
+      "id": "projects",
+      "path": "/projects",
+      "label": "工程案例",
+      "order": 4
+    },
+    {
+      "id": "news",
+      "path": "/news",
+      "label": "新闻资讯",
+      "order": 5
+    },
+    {
+      "id": "about",
+      "path": "/about",
+      "label": "关于我们",
+      "order": 6
+    },
+    {
+      "id": "contact",
+      "path": "/contact",
+      "label": "联系我们",
+      "order": 7
+    }
+  ]
+}
