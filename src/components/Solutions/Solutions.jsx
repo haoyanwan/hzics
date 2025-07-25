@@ -39,14 +39,11 @@ export default function Home() {
 
   return (
     <div className={styles.productsPage}>
-      {/* Banner */}
-      <div className={styles.banner}>
-        <img
-          src="/images/pages/products-hero.png"
-          alt="Solutions Banner"
-          className={styles.bannerImage}
-        />
-      </div>
+      <h1 className={styles.title}>解决方案</h1>
+      <p className={styles.description}>
+        基于多年行业经验，我们为不同规模的企业量身定制智能会议解决方案。
+        从会议云服务管理到移动端应用，我们的综合性解决方案覆盖会议全流程，助力您的组织实现高效协作。
+      </p>
 
       <div className={styles.layoutContainer}>
         {/* Navigation */}

@@ -36,14 +36,11 @@ export default function Products() {
 
   return (
     <div className={styles.productsPage}>
-      {/* Banner */}
-      <div className={styles.banner}>
-        <img
-          src="/images/pages/products-hero.png"
-          alt="Products Banner"
-          className={styles.bannerImage}
-        />
-      </div>
+      <h1 className={styles.title}>产品中心</h1>
+      <p className={styles.description}>
+        探索我们精心打造的智能会议产品系列，为您的企业提供全面的会议管理解决方案。
+        从智能签到系统到多媒体会议平台，每一个产品都经过精心设计，旨在提升会议效率和用户体验。
+      </p>
 
       <div className={styles.layoutContainer}>
         {/* Navigation */}

@@ -1,0 +1,158 @@
+{
+  "meetingProjects": [
+    {
+      "id": "multimedia-1",
+      "category": "多媒体会议系统",
+      "title": "湖南省人大多媒体会议系统",
+      "location": "湖南省人大",
+      "description": "为湖南省人大常委会会议室提供的综合多媒体会议解决方案，集成了高清显示、音响扩声、视频会议等功能。",
+      "features": ["高清显示系统", "专业音响设备", "视频会议功能", "会议管理系统"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/多媒体会议系统1-湖南省人大.jpg",
+      "thumbnail": "/images/customer-cases/多媒体会议系统1.1-湖南省人大.jpg"
+    },
+    {
+      "id": "multimedia-2",
+      "category": "多媒体会议系统",
+      "title": "现代化多媒体会议系统",
+      "location": "企业会议室",
+      "description": "现代化企业会议室多媒体解决方案，支持远程协作和高效会议管理。",
+      "features": ["4K高清显示", "无线投屏", "智能控制系统", "远程会议支持"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/多媒体会议系统-2.jpg",
+      "thumbnail": "/images/customer-cases/多媒体会议系统-2.1.jpg"
+    },
+    {
+      "id": "multimedia-3",
+      "category": "多媒体会议系统",
+      "title": "智能化多媒体会议系统",
+      "location": "政府机关会议室",
+      "description": "政府机关专用多媒体会议系统，集成高清显示、数字化音频、中控系统于一体。",
+      "features": ["智能中控系统", "数字化音频", "大屏显示", "会议记录"],
+      "year": "2022",
+      "mainImage": "/images/customer-cases/多媒体会议系统3.jpg",
+      "thumbnail": "/images/customer-cases/多媒体会议系统3.1.jpg"
+    },
+    {
+      "id": "multimedia-4",
+      "category": "多媒体会议系统",
+      "title": "大型会议厅多媒体系统",
+      "location": "会议中心大厅",
+      "description": "面向大型会议厅的综合多媒体解决方案，支持数百人同时使用的高端会议系统。",
+      "features": ["多区域显示", "分布式音响", "远程直播", "多会议室互联"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/多媒体会议系统4.jpg",
+      "thumbnail": "/images/customer-cases/多媒体会议系统4.1.jpg"
+    },
+    {
+      "id": "voting-1",
+      "category": "表决系统",
+      "title": "佛山市政府会场表决系统",
+      "location": "佛山市政府会场",
+      "description": "为佛山市政府会议提供的电子表决系统，支持实时投票、统计分析和结果展示。",
+      "features": ["电子表决终端", "实时统计", "结果显示", "投票管理系统"],
+      "year": "2022",
+      "mainImage": "/images/customer-cases/表决系统1-佛山市政府会场.jpg",
+      "thumbnail": "/images/customer-cases/表决系统1.1-佛山市政府会场.jpg"
+    },
+    {
+      "id": "voting-2",
+      "category": "表决系统",
+      "title": "茂名市民中心表决系统",
+      "location": "茂名市民中心",
+      "description": "茂名市民中心大型会议厅表决系统，支持多种投票模式和数据分析功能。",
+      "features": ["多模式表决", "数据分析", "大屏显示", "会议记录"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/表决系统2-茂名市民中心.jpg",
+      "thumbnail": "/images/customer-cases/表决系统2.1-茂名市民中心.jpg"
+    },
+    {
+      "id": "voting-3",
+      "category": "表决系统",
+      "title": "广州市中医院表决系统",
+      "location": "广州市中医院",
+      "description": "医院专用的电子表决系统，用于医院理事会、学术委员会等重要决策会议。",
+      "features": ["匿名投票", "实时统计", "数据加密", "可追溯记录"],
+      "year": "2022",
+      "mainImage": "/images/customer-cases/表决系统3-广州市中医院.jpg",
+      "thumbnail": "/images/customer-cases/表决系统3.3-广州市中医院.jpg"
+    },
+    {
+      "id": "checkin-1",
+      "category": "签到系统",
+      "title": "昆山智能签到系统",
+      "location": "昆山会议中心",
+      "description": "智能化会议签到管理系统，支持多种签到方式和实时统计功能。",
+      "features": ["多重验证", "人脸识别", "实时统计", "移动端支持"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/签到系统1-昆山.jpg",
+      "thumbnail": "/images/customer-cases/签到系统1.1-昆山.jpg"
+    },
+    {
+      "id": "checkin-2",
+      "category": "签到系统",
+      "title": "四川资阳政府签到系统",
+      "location": "四川资阳政府",
+      "description": "四川资阳市政府会议室签到系统，支持身份证识别和手机签到多种方式。",
+      "features": ["身份证识别", "手机签到", "实时统计", "导出报表"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/签到系统2-四川资阳.jpg",
+      "thumbnail": "/images/customer-cases/签到系统2.1-四川资阳.jpg"
+    },
+    {
+      "id": "checkin-3",
+      "category": "签到系统",
+      "title": "白云区人大签到系统",
+      "location": "广州白云区人大",
+      "description": "白云区人大常委会会议签到系统，支持代表身份验证和会议出席管理。",
+      "features": ["代表身份验证", "会议出席管理", "签到统计", "手机客户端"],
+      "year": "2022",
+      "mainImage": "/images/customer-cases/签到系统3-白云区人大.jpg",
+      "thumbnail": "/images/customer-cases/签到系统3.1-白云区人大.jpg"
+    },
+    {
+      "id": "checkin-4",
+      "category": "签到系统",
+      "title": "佛山人大签到系统",
+      "location": "佛山市人大常委会",
+      "description": "佛山市人大常委会会议签到系统，支持多终端签到和会议管理功能。",
+      "features": ["多终端签到", "会议管理", "数据统计", "云端存储"],
+      "year": "2022",
+      "mainImage": "/images/customer-cases/签到系统4-佛山人大.jpg",
+      "thumbnail": "/images/customer-cases/签到系统4.1-佛山人大.jpg"
+    },
+    {
+      "id": "checkin-5",
+      "category": "签到系统",
+      "title": "上海金山政府签到系统",
+      "location": "上海金山政府",
+      "description": "上海金山政府会议室智能签到系统，集成人区识别和身份验证功能。",
+      "features": ["人脸识别", "身份验证", "智能统计", "移动管理"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/签到系统5-上海金山.jpg",
+      "thumbnail": "/images/customer-cases/签到系统5.1-上海金山.jpg"
+    },
+    {
+      "id": "checkin-6",
+      "category": "签到系统",
+      "title": "茂名政府签到系统",
+      "location": "茂名市政府",
+      "description": "茂名市政府机关会议签到系统，支持多会议室同时使用和集中管理。",
+      "features": ["多会议室支持", "集中管理", "实时监控", "数据分析"],
+      "year": "2022",
+      "mainImage": "/images/customer-cases/签到系统6-茂名.jpg",
+      "thumbnail": "/images/customer-cases/签到系统6.1-茂名.jpg"
+    },
+    {
+      "id": "election-1",
+      "category": "电子票箱选举",
+      "title": "茂名电子票箱选举系统",
+      "location": "茂名市人大",
+      "description": "茂名市人大代表选举专用的电子票箱系统，支持安全加密和防篁改功能。",
+      "features": ["安全加密", "防篁改设计", "实时统计", "结果备份"],
+      "year": "2023",
+      "mainImage": "/images/customer-cases/电子票箱选举1-茂名.jpg",
+      "thumbnail": "/images/customer-cases/电子票箱选举1.1-茂名.jpg"
+    }
+  ]
+}

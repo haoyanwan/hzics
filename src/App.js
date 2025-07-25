@@ -27,6 +27,24 @@ const NavLink = ({ to, children }) => {
 
 function App() {
   const [showFooter, setShowFooter] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    const newState = !isMobileMenuOpen;
+    setIsMobileMenuOpen(newState);
+    
+    // Prevent body scroll when menu is open
+    if (newState) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    document.body.style.overflow = 'unset';
+  };
 
   return (
     <Router>
@@ -37,7 +55,9 @@ function App() {
             <div className="logo-container">
               <img src="/images/branding/logo.png" alt="公司标志" className="logo" />
             </div>
-            <nav>
+            
+            {/* Desktop Navigation */}
+            <nav className="desktop-nav">
               <ul className="nav-links">
                 {navigationData.navigationItems
                   .sort((a, b) => a.order - b.order)
@@ -47,7 +67,46 @@ function App() {
                 }
               </ul>
             </nav>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </button>
+
+            {/* Mobile Dropdown Menu */}
+            <nav className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+              <ul className="mobile-nav-links">
+                {navigationData.navigationItems
+                  .sort((a, b) => a.order - b.order)
+                  .map(item => (
+                    <li key={item.id}>
+                      <Link 
+                        to={item.path} 
+                        onClick={closeMobileMenu}
+                        className="mobile-nav-link"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))
+                }
+              </ul>
+            </nav>
           </div>
+
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div 
+              className="mobile-menu-overlay"
+              onClick={closeMobileMenu}
+            />
+          )}
         </header>
 
         {/* 主要内容区域 */}

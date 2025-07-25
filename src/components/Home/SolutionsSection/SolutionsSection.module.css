@@ -226,7 +226,7 @@
 }
 
 .solutionCard:hover .logoContainer {
-    transform: scale(1.1) rotate(5deg);
+    opacity: 0.9;
 }
 
 .logoContainer::before {

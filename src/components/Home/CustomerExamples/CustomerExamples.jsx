@@ -1,65 +1,26 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './CustomerExamples.module.css';
+import meetingProjectsData from '../../../data/meetingProjects.json';
 
 export default function CustomerExamples() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
-  const customerExamples = [
-    {
-      id: 1,
-      title: "国际科技峰会2024",
-      company: "华为技术有限公司",
-      description: "为期三天的全球科技创新大会，汇聚来自50多个国家的技术专家和行业领袖，展示最新的5G、AI和云计算技术成果。",
-      image: "/images/customer-cases/case-01.png",
-      participants: "3,500+",
-      duration: "3天"
-    },
-    {
-      id: 2,
-      title: "年度股东大会",
-      company: "中国银行股份有限公司",
-      description: "线上线下混合模式的年度股东大会，确保全球股东能够实时参与投票表决和互动问答环节。",
-      image: "/images/customer-cases/case-02.png",
-      participants: "1,200+",
-      duration: "1天"
-    },
-    {
-      id: 3,
-      title: "教育创新研讨会",
-      company: "北京师范大学",
-      description: "聚焦未来教育发展趋势的学术研讨会，采用智能会议系统实现多校区同步直播和互动交流。",
-      image: "/images/customer-cases/case-03.png",
-      participants: "800+",
-      duration: "2天"
-    },
-    {
-      id: 4,
-      title: "医疗健康论坛",
-      company: "中国医学科学院",
-      description: "国际医疗健康创新论坛，邀请全球顶尖医学专家分享最新研究成果和临床实践经验。",
-      image: "/images/customer-cases/case-01.png",
-      participants: "2,000+",
-      duration: "2天"
-    },
-    {
-      id: 5,
-      title: "智慧城市建设大会",
-      company: "深圳市政府",
-      description: "展示智慧城市建设最新成果，推动数字化转型和可持续发展的高端政府会议。",
-      image: "/images/customer-cases/case-02.png",
-      participants: "1,500+",
-      duration: "1天"
-    },
-    {
-      id: 6,
-      title: "新能源汽车展览会",
-      company: "比亚迪股份有限公司",
-      description: "新能源汽车技术创新展览会，展示电动汽车、自动驾驶和绿色出行解决方案。",
-      image: "/images/customer-cases/case-03.png",
-      participants: "4,200+",
-      duration: "4天"
-    }
-  ];
+  // Use actual project data from the projects page (first 6 projects)
+  const customerExamples = meetingProjectsData.meetingProjects.slice(0, 6).map((project, index) => ({
+    id: project.id,
+    title: project.title,
+    company: project.location || '项目案例',
+    image: project.thumbnail,
+    category: project.category,
+    year: project.year || '2023'
+  }));
+
+  const handleProjectClick = (projectId) => {
+    // Navigate to projects page with hash to select specific project
+    navigate(`/projects#${projectId}`);
+  };
 
   // Auto-scroll timer
   useEffect(() => {
@@ -133,16 +94,20 @@ export default function CustomerExamples() {
             style={{ transform: getTransform() }}
           >
             {customerExamples.map((example) => (
-              <div key={example.id} className={styles.exampleCard}>
+              <div 
+                key={example.id} 
+                className={styles.exampleCard}
+                onClick={() => handleProjectClick(example.id)}
+              >
                 <div className={styles.exampleImageContainer}>
                   <img src={example.image} alt={example.title} className={styles.exampleImage} />
                   <div className={styles.exampleOverlay}>
                     <div className={styles.exampleStats}>
                       <span className={styles.statItem}>
-                        <strong>{example.participants}</strong> 参会人员
+                        <strong>{example.category}</strong>
                       </span>
                       <span className={styles.statItem}>
-                        <strong>{example.duration}</strong> 会议时长
+                        <strong>{example.year}</strong> 年
                       </span>
                     </div>
                   </div>
@@ -150,7 +115,10 @@ export default function CustomerExamples() {
                 <div className={styles.exampleContent}>
                   <h3 className={styles.exampleTitle}>{example.title}</h3>
                   <h4 className={styles.exampleCompany}>{example.company}</h4>
-                  <p className={styles.exampleDescription}>{example.description}</p>
+                  <div className={styles.viewMore}>
+                    <span className={styles.viewMoreText}>点击查看详情</span>
+                    <span className={styles.viewMoreArrow}>→</span>
+                  </div>
                 </div>
               </div>
             ))}

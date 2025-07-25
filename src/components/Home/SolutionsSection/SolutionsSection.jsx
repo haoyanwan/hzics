@@ -1,6 +1,8 @@
+import { useNavigate } from 'react-router-dom';
 import styles from './SolutionsSection.module.css';
 
 export default function SolutionsSection() {
+  const navigate = useNavigate();
   const solutions = [
     {
       id: 1,
@@ -64,13 +66,11 @@ export default function SolutionsSection() {
   ];
 
   const handleViewMore = (solutionId) => {
-    // Placeholder for future implementation
-    console.log(`View more details for solution ${solutionId}`);
+    navigate('/solutions');
   };
 
   const handleLearnMore = (productId) => {
-    // Placeholder for future implementation
-    console.log(`Learn more about product ${productId}`);
+    navigate('/products');
   };
 
   return (

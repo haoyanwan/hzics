@@ -16,7 +16,7 @@ This is a Create React App-based project for HZICS (Huizhi Intelligent Conferenc
 
 ## Development Commands
 
-There is no way currently to test for errors, ask the user to do it manually towards the end after all changes are done. 
+There is no way currently to test for errors, ask the user to do it manually towards the end after all changes are done. npm start and such do not work
 
 ## Architecture
 
@@ -61,6 +61,8 @@ There is no way currently to test for errors, ask the user to do it manually tow
 - Standard CRA ESLint configuration
 
 ## IMPORETANT
+- ONLY TALK IN ENGLISH 
 - During our conversation break things down in to discrete changes, and suggest a small test after each stage to make sure things are on the right track.
 - Request clarification for anything unclear or ambiguous. DO NOT make any changes until you are absolutely certain that the details are accounted for, provide the user with a list of clarifications before you make the change. 
 - Any changes that the user request that might require changes else where in the code or changes in more than one file, you should ask if this is what the user intended. 
+- During commits, make the message briefe and never state that you made it

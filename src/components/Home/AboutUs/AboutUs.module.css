@@ -142,9 +142,9 @@
 }
 
 .contentCard:hover {
-  transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
   border-color: rgba(59, 130, 246, 0.2);
+  opacity: 0.95;
 }
 
 .contentCard:nth-child(1) {
@@ -179,8 +179,8 @@
 }
 
 .contentCard:hover .cardIcon {
-  transform: scale(1.1) rotate(5deg);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  opacity: 0.9;
 }
 
 .cardTitle {

@@ -503,7 +503,7 @@
 }
 
 .certificateItem:hover .certificateImage {
-  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 /* Mission Section */

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mv:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm start)",
+      "Bash(cat:*)",
+      "Bash(npm run build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git push:*)"
+    ],
+    "deny": []
+  }
+}
