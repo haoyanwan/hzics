@@ -61,7 +61,7 @@ There is no way currently to test for errors, ask the user to do it manually tow
 - Standard CRA ESLint configuration
 
 ## IMPORETANT
-- ONLY TALK IN ENGLISH 
+- ONLY TALK IN ENGLISH when conversing, that is our main language
 - During our conversation break things down in to discrete changes, and suggest a small test after each stage to make sure things are on the right track.
 - Request clarification for anything unclear or ambiguous. DO NOT make any changes until you are absolutely certain that the details are accounted for, provide the user with a list of clarifications before you make the change. 
 - Any changes that the user request that might require changes else where in the code or changes in more than one file, you should ask if this is what the user intended. 

@@ -7,6 +7,7 @@ import Solutions from './components/Solutions';
 import Products from './components/Products';
 import Projects from './components/Projects';
 import News from './components/News';
+import NewsArticle from './components/NewsArticle';
 import About from './components/About';
 import Contact from './components/Contact';
 
@@ -117,6 +118,7 @@ function App() {
             <Route path="/products" element={<Products setShowFooter={setShowFooter} />} />
             <Route path="/projects" element={<Projects setShowFooter={setShowFooter} />} />
             <Route path="/news" element={<News setShowFooter={setShowFooter} />} />
+            <Route path="/news/:id" element={<NewsArticle setShowFooter={setShowFooter} />} />
             <Route path="/about" element={<About setShowFooter={setShowFooter} />} />
             <Route path="/contact" element={<Contact setShowFooter={setShowFooter} />} />
           </Routes>
