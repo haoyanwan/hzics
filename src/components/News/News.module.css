@@ -1,0 +1,631 @@
+.newsPage {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 4rem 0 2rem;
+}
+
+.pageTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.pageSubtitle {
+  font-size: 1.2rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main news section */
+.mainNewsSection {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+/* Featured article */
+.featuredArticle {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.featuredImageContainer {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+
+.featuredContent {
+  padding: 2rem;
+}
+
+.featuredMeta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.featuredDate {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.featuredCategory {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.featuredTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.featuredSummary {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.readMoreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #4338ca;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.readMoreButton:hover {
+  background: #3730a3;
+  box-shadow: 0 2px 8px rgba(67, 56, 202, 0.3);
+}
+
+.readMoreButton svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* News navigation */
+.newsNavigation {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 2rem;
+  height: fit-content;
+}
+
+
+.newsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.newsListItem {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.newsListItem:last-child {
+  border-bottom: none;
+}
+
+
+.newsListLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newsListLink:hover {
+  background: #f1f5f9;
+  margin: 0 -1rem;
+  padding: 1rem;
+}
+
+.newsListLink.active {
+  background: #e0e7ff;
+  margin: 0 -1rem;
+  padding: 1rem;
+}
+
+.newsListContent {
+  flex: 1;
+}
+
+.chevronIcon {
+  width: 16px;
+  height: 16px;
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.newsListLink:hover .chevronIcon,
+.newsListLink.active .chevronIcon {
+  opacity: 1;
+  color: #4338ca;
+}
+
+.newsListDate {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.newsListTitle {
+  display: block;
+  color: #1e293b;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.newsListLink:hover .newsListTitle,
+.newsListLink.active .newsListTitle {
+  color: #4338ca;
+}
+
+/* Sub-featured section */
+.subFeaturedSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.subFeaturedArticle {
+  background: #f8fafc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.subFeaturedArticle:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.subFeaturedImageContainer {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.subFeaturedImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.subFeaturedArticle:hover .subFeaturedImage {
+  opacity: 0.9;
+}
+
+.subFeaturedContent {
+  padding: 1.5rem;
+}
+
+.subFeaturedMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.subFeaturedDate {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.subFeaturedCategory {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 0.2rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.subFeaturedTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.subFeaturedSummary {
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.readMoreButtonSmall {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: #4338ca;
+  border: 1px solid #4338ca;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.readMoreButtonSmall:hover {
+  background: #4338ca;
+  color: white;
+  box-shadow: 0 2px 8px rgba(67, 56, 202, 0.3);
+}
+
+.readMoreButtonSmall svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Company updates section */
+.companyUpdatesSection {
+  background: #f1f5f9;
+  padding: 4rem 0;
+  min-height: 300px;
+}
+
+.companyUpdatesTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.companyUpdatesSubtitle {
+  font-size: 1.1rem;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Company updates gallery */
+.companyUpdatesGallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.updateItem {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.updateItem:hover {
+  opacity: 0.8;
+}
+
+.updateImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+
+.updateTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+.updateDate {
+  color: #64748b;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* No results */
+.noResults {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.noResultsIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  color: #cbd5e1;
+}
+
+.noResultsIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.noResults h3 {
+  font-size: 1.5rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.noResults p {
+  color: #94a3b8;
+}
+
+/* Mobile Styles */
+.mobileNewsSection {
+  margin-bottom: 3rem;
+}
+
+.mobileCardCarousel {
+  position: relative;
+}
+
+.mobileCard {
+  background: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mobileCardImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.mobileCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobileCardContent {
+  padding: 1.5rem;
+}
+
+.mobileCardMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mobileCardDate {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.mobileCardCategory {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.mobileCardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.mobileCardSummary {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mobileReadMore {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.mobileCardNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.mobileNavArrow {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileNavArrow:hover {
+  background: #2563eb;
+  transform: scale(1.1);
+}
+
+.mobileCardDots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background: #94a3b8;
+}
+
+.activeDot {
+  width: 10px;
+  height: 10px;
+  background: #3b82f6;
+}
+
+/* Mobile Stories Section */
+.mobileStoriesSection {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobileStoriesSection::-webkit-scrollbar {
+  display: none;
+}
+
+.storiesContainer {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+.storyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.storyCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  margin-bottom: 0.5rem;
+}
+
+.storyImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.storyTitle {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+  width: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+  
+  .pageHeader {
+    padding: 2rem 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .companyUpdatesTitle {
+    font-size: 1.5rem;
+  }
+  
+  .companyUpdatesSubtitle {
+    font-size: 0.9rem;
+  }
+}
+

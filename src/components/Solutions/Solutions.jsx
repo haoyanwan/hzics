@@ -8,11 +8,32 @@ export default function Home() {
   const [activeCategories, setActiveCategories] = useState(['management']);
   const [expandedCategories, setExpandedCategories] = useState(['management']);
   const [activeProduct, setActiveProduct] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const productCategories = solutionData.solutionCategories.map(category => ({
     ...category,
     products: category.solutions
   }));
+
+  // Flatten all products for mobile navigation
+  const allProducts = productCategories.flatMap(category => 
+    category.products.map(product => ({
+      ...product,
+      categoryName: category.name
+    }))
+  );
+
+  // Check if screen is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     // Scroll to top when component mounts or navigation state changes
@@ -53,6 +74,24 @@ export default function Home() {
         ? prev.filter(id => id !== categoryId)
         : [...prev, categoryId]
     );
+  };
+
+  // Mobile navigation functions
+  const getCurrentProductIndex = () => {
+    if (!activeProduct) return 0;
+    return allProducts.findIndex(product => product.name === activeProduct.name);
+  };
+
+  const handlePreviousProduct = () => {
+    const currentIndex = getCurrentProductIndex();
+    const newIndex = currentIndex === 0 ? allProducts.length - 1 : currentIndex - 1;
+    setActiveProduct(allProducts[newIndex]);
+  };
+
+  const handleNextProduct = () => {
+    const currentIndex = getCurrentProductIndex();
+    const newIndex = (currentIndex + 1) % allProducts.length;
+    setActiveProduct(allProducts[newIndex]);
   };
 
 
@@ -100,6 +139,14 @@ export default function Home() {
 
         {/* Content Area */}
         <div className={styles.contentArea}>
+          {/* Mobile Solution Header */}
+          {isMobile && activeProduct && (
+            <div className={styles.mobileSolutionHeader}>
+              <h2 className={styles.mobileSolutionTitle}>{activeProduct.name}</h2>
+              <p className={styles.mobileSolutionCategory}>{activeProduct.categoryName}</p>
+            </div>
+          )}
+
           {activeProduct && activeProduct.pdf ? (
             <iframe
             title='PDF Viewer'
@@ -108,8 +155,29 @@ export default function Home() {
             />
           ) : (
             <div className={styles.contentPlaceholder}>
-              <div className={styles.placeholderTitle}>解决方案文档暂未准备好</div>
-              <div className={styles.placeholderText}>该解决方案的详细文档正在准备中，敬请期待</div>
+              <div className={styles.placeholderTitle}>文档暂未准备好</div>
+              <div className={styles.placeholderText}>该产品的详细文档正在准备中，敬请期待</div>
+            </div>
+          )}
+
+          {/* Mobile Navigation */}
+          {isMobile && (
+            <div className={styles.mobileNavigation}>
+              <button 
+                className={styles.mobileNavButton}
+                onClick={handlePreviousProduct}
+              >
+                上一个
+              </button>
+              <div className={styles.mobileNavIndicator}>
+                {getCurrentProductIndex() + 1} / {allProducts.length}
+              </div>
+              <button 
+                className={styles.mobileNavButton}
+                onClick={handleNextProduct}
+              >
+                下一个
+              </button>
             </div>
           )}
         </div>

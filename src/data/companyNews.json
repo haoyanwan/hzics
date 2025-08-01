@@ -7,7 +7,11 @@
       "summary": "经过两年精心研发，我们全新推出的无纸化会议系统集成了AI智能语音识别、实时翻译、云端同步等前沿技术，为政府机构和企业客户提供更加高效便捷的会议管理体验。",
       "image": "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2226&q=80",
       "imageAlt": "会议室科技",
-      "link": "#"
+      "category": "产品发布",
+      "tags": ["产品发布", "AI技术", "无纸化会议"],
+      "author": "会智科技",
+      "readTime": "8分钟",
+      "link": "/news/1"
     },
     {
       "id": 2,
@@ -16,7 +20,11 @@
       "summary": "广州会智智能科技有限公司正式获得国家高新技术企业认定证书，这标志着公司在技术创新能力和研发实力方面得到了国家权威机构的认可，为公司未来发展奠定了坚实基础。",
       "image": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
       "imageAlt": "团队合作",
-      "link": "#"
+      "category": "公司荣誉",
+      "tags": ["高新技术企业", "认证证书", "技术创新"],
+      "author": "会智科技",
+      "readTime": "6分钟",
+      "link": "/news/2"
     },
     {
       "id": 3,
@@ -25,7 +33,50 @@
       "summary": "公司携最新研发的智能会议系统产品亮相第十五届中国国际会议展览会，吸引了众多政府机构和企业客户的关注。现场展示了我们在会议信息化领域的最新技术成果。",
       "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
       "imageAlt": "展会现场",
-      "link": "#"
+      "category": "展会活动",
+      "tags": ["展会参展", "产品展示", "商务合作"],
+      "author": "会智科技",
+      "readTime": "7分钟",
+      "link": "/news/3"
+    },
+    {
+      "id": 4,
+      "date": "2024年4月",
+      "title": "与广州市政府签署智慧会议建设合作协议",
+      "summary": "公司与广州市政府正式签署智慧会议系统建设合作协议，将为市政府及下属各部门提供全面的智能化会议解决方案，标志着公司在政府市场的重要突破。",
+      "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2084&q=80",
+      "imageAlt": "政府合作",
+      "category": "重大合作",
+      "tags": ["政府合作", "智慧会议", "重大项目"],
+      "author": "会智科技",
+      "readTime": "9分钟",
+      "link": "/news/4"
+    },
+    {
+      "id": 5,
+      "date": "2024年3月",
+      "title": "研发团队荣获广东省科技进步奖",
+      "summary": "公司核心研发团队凭借在智能会议系统领域的技术创新成果，荣获2023年度广东省科技进步奖二等奖，这是对团队多年来技术攻关的重要肯定。",
+      "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "imageAlt": "科技奖励",
+      "category": "技术荣誉",
+      "tags": ["科技进步奖", "技术创新", "团队荣誉"],
+      "author": "会智科技",
+      "readTime": "8分钟",
+      "link": "/news/5"
+    },
+    {
+      "id": 6,
+      "date": "2024年2月",
+      "title": "春节后首个工作日全员大会圆满召开",
+      "summary": "春节假期结束后，公司召开全员大会，总结2023年工作成果，部署2024年发展规划。全体员工精神饱满，对新年工作充满期待。",
+      "image": "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "imageAlt": "全员大会",
+      "category": "公司动态",
+      "tags": ["全员大会", "年度总结", "发展规划"],
+      "author": "会智科技",
+      "readTime": "7分钟",
+      "link": "/news/6"
     }
   ]
 }

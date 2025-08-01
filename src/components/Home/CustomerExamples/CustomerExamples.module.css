@@ -349,84 +349,120 @@
     opacity: 0.8;
 }
 
-/* Responsive design */
-@media (max-width: 1024px) {
-    .examplesTrack {
-        gap: 1.5rem;
-    }
+/* Mobile Single Card Container */
+.mobileCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  min-height: 400px;
+}
 
-    .exampleCard {
-        flex: 0 0 350px;
-        max-width: 350px;
-    }
+.mobileCard {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeInScale 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 1024px) {
+  .examplesTrack {
+    gap: 1rem;
+  }
+  
+  .exampleCard {
+    min-width: 280px;
+    max-width: 320px;
+  }
 }
 
 @media (max-width: 768px) {
-    .fourth {
-        padding: 3rem 1rem;
-    }
-
-    .sectionTitle {
-        font-size: 2rem;
-    }
-
-    .contentImage {
-        max-height: 50vh;
-    }
-
-    .examplesWrapper {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .examplesContainer {
-        width: 100%;
-    }
-
-    .examplesTrack {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .exampleCard {
-        flex: 0 0 auto;
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .exampleOverlay {
-        transform: translateY(0);
-    }
-
-    .navButton {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
+  .examplesSection {
+    padding: 3rem 1rem;
+  }
+  
+  /* Hide desktop carousel elements on mobile */
+  .examplesWrapper {
+    display: none;
+  }
+  
+  /* Mobile card container styles */
+  .mobileCardContainer {
+    padding: 2rem 1rem;
+  }
+  
+  .mobileCard {
+    max-width: 320px;
+    padding: 1rem;
+  }
+  
+  .exampleCard {
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+  }
+  
+  .cardTitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .navigationDots {
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 @media (max-width: 480px) {
-    .sectionTitle {
-        font-size: 1.8rem;
-    }
-
-    .sectionDescription {
-        font-size: 1rem;
-    }
-
-    .exampleContent {
-        padding: 1rem;
-    }
-
-    .exampleTitle {
-        font-size: 1.1rem;
-    }
-
-    .exampleCompany {
-        font-size: 0.9rem;
-    }
-
-    .exampleDescription {
-        font-size: 0.9rem;
-    }
+  .examplesSection {
+    padding: 2rem 0.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .sectionDescription {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  
+  .mobileCardContainer {
+    padding: 1.5rem 0.5rem;
+  }
+  
+  .mobileCard {
+    max-width: 300px;
+    padding: 0.8rem;
+  }
+  
+  .cardTitle {
+    font-size: 1rem;
+  }
+  
+  .cardDescription {
+    font-size: 0.8rem;
+  }
 }
+

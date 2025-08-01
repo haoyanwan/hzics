@@ -291,36 +291,38 @@
   }
 }
 
-
-/* Responsive Design */
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
   .title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
   }
-
+  
   .subtitle {
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     padding: 0 1rem;
   }
-
+  
   .cardsContainer {
+    flex-direction: column;
     gap: 1.5rem;
-    padding: 0.5rem;
+    padding: 0 1rem;
+    max-width: 100%;
   }
-
+  
   .card {
-    width: 280px;
-    padding: 2rem 1.5rem;
-    min-height: 200px;
+    width: 100%;
+    max-width: 350px;
+    min-height: auto;
+    padding: 1.5rem;
   }
-
+  
   .cardTitle {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
   }
-
+  
   .cardContent {
     font-size: 0.9rem;
     line-height: 1.6;
@@ -329,29 +331,33 @@
 
 @media (max-width: 480px) {
   .title {
-    font-size: 2.8rem;
+    font-size: 2rem;
+    line-height: 1.2;
   }
-
+  
   .subtitle {
     font-size: 1rem;
-    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
   }
-
+  
   .cardsContainer {
     gap: 1rem;
+    padding: 0 0.5rem;
   }
-
+  
   .card {
-    width: 100%;
     max-width: 300px;
-    padding: 1.5rem;
+    padding: 1.2rem;
+    min-height: auto;
   }
-
+  
   .cardTitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
-
+  
   .cardContent {
     font-size: 0.85rem;
   }
 }
+
+

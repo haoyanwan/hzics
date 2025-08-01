@@ -3,7 +3,6 @@
     min-height: 100vh;
     background: #f8fafc;
     position: relative;
-    padding-top: 7vh;
     transition: all 0.3s cubic-bezier(.07,.74,.49,.98);
 }
 
@@ -436,67 +435,3 @@
     66% { transform: translate(20px, -15px) rotate(-0.5deg); }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .introSection {
-        flex-direction: column;
-        min-height: 350px;
-        aspect-ratio: 2/1;
-    }
-    
-    .imageHalf {
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .handshakeImage {
-        border-radius: 0 0 20px 20px;
-    }
-    
-    .philosophyContainer {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .philosophyTitleFloat {
-        min-height: auto;
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .philosophyBox {
-        flex: none;
-    }
-    
-    .contactContent {
-        gap: 2rem;
-    }
-    
-    .formRow {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .contactGrid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .mapPlaceholder {
-        height: 300px;
-    }
-    
-    .baiduMap {
-        height: 300px;
-    }
-    
-    .contentBackground {
-        padding-top: 10rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .contentBackground {
-        padding-top: 8rem;
-    }
-}

@@ -70,7 +70,7 @@ export default function FeaturesSection() {
           <div className={styles.columnsContainer}>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <rect x="8" y="8" width="32" height="32" rx="4" fill="#4F46E5" stroke="#312E81" strokeWidth="2" />
                   <path d="M16 20h16M16 24h16M16 28h12" stroke="white" strokeWidth="2" strokeLinecap="round" />
                   <circle cx="12" cy="20" r="1" fill="white" />
@@ -96,7 +96,7 @@ export default function FeaturesSection() {
             </div>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <circle cx="18" cy="16" r="6" fill="#10B981" stroke="#065F46" strokeWidth="2" />
                   <circle cx="30" cy="16" r="6" fill="#10B981" stroke="#065F46" strokeWidth="2" />
                   <path d="M6 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="#065F46" strokeWidth="2" strokeLinecap="round" />
@@ -120,7 +120,7 @@ export default function FeaturesSection() {
             </div>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <rect x="4" y="20" width="40" height="20" rx="2" fill="#F59E0B" stroke="#92400E" strokeWidth="2" />
                   <rect x="8" y="12" width="32" height="8" rx="2" fill="#FED7AA" stroke="#92400E" strokeWidth="2" />
                   <rect x="12" y="24" width="6" height="12" fill="#92400E" />
@@ -143,7 +143,7 @@ export default function FeaturesSection() {
             </div>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <path d="M12 6h18l6 6v30a2 2 0 01-2 2H12a2 2 0 01-2-2V8a2 2 0 012-2z" fill="#8B5CF6" stroke="#5B21B6" strokeWidth="2" />
                   <path d="M30 6v6h6" stroke="#5B21B6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M16 20h16M16 24h16M16 28h12" stroke="white" strokeWidth="2" strokeLinecap="round" />
@@ -172,7 +172,7 @@ export default function FeaturesSection() {
           <div className={styles.columnsContainer}>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <rect x="8" y="12" width="32" height="24" rx="4" fill="#EF4444" stroke="#B91C1C" strokeWidth="2" />
                   <circle cx="24" cy="24" r="6" fill="white" />
                   <circle cx="24" cy="24" r="3" fill="#EF4444" />
@@ -197,7 +197,7 @@ export default function FeaturesSection() {
             </div>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <rect x="6" y="8" width="36" height="24" rx="4" fill="#06B6D4" stroke="#0E7490" strokeWidth="2" />
                   <rect x="10" y="36" width="28" height="4" rx="2" fill="#0E7490" />
                   <path d="M14 16l8 6-8 6z" fill="white" />
@@ -218,7 +218,7 @@ export default function FeaturesSection() {
             </div>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <circle cx="24" cy="24" r="16" fill="#7C3AED" stroke="#5B21B6" strokeWidth="2" />
                   <path d="M16 24l4 4 8-8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M32 16l8-8M40 16l-8-8M32 32l8 8M40 32l-8 8" stroke="#5B21B6" strokeWidth="2" strokeLinecap="round" />
@@ -246,7 +246,7 @@ export default function FeaturesSection() {
           <div className={styles.columnsContainer}>
             <div className={styles.column}>
               <div className={styles.columnIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.iconImage}>
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="https://www.w3.org/2000/svg" className={styles.iconImage}>
                   <rect x="8" y="8" width="24" height="32" rx="4" fill="#059669" stroke="#047857" strokeWidth="2" />
                   <path d="M16 18h8M16 22h8M16 26h6" stroke="white" strokeWidth="2" strokeLinecap="round" />
                   <path d="M36 16l4 4-4 4" stroke="#047857" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

@@ -7,6 +7,7 @@ import Solutions from './components/Solutions';
 import Products from './components/Products';
 import Projects from './components/Projects';
 import News from './components/News';
+import NewsArticle from './components/NewsArticle';
 import About from './components/About';
 import Contact from './components/Contact';
 
@@ -51,33 +52,35 @@ function App() {
       <div className="app">
         {/* 头部区域 */}
         <header className="app-header">
-          <div className="header-content">
-            <div className="logo-container">
-              <img src="/images/branding/logo.png" alt="公司标志" className="logo" />
-            </div>
-            
-            {/* Desktop Navigation */}
-            <nav className="desktop-nav">
-              <ul className="nav-links">
-                {navigationData.navigationItems
-                  .sort((a, b) => a.order - b.order)
-                  .map(item => (
-                    <NavLink key={item.id} to={item.path}>{item.label}</NavLink>
-                  ))
-                }
-              </ul>
-            </nav>
+          <div className="header-container">
+            <div className="header-content">
+              <div className="logo-container">
+                <img src="/images/branding/logo.png" alt="公司标志" className="logo" />
+              </div>
+              
+              {/* Desktop Navigation */}
+              <nav className="desktop-nav">
+                <ul className="nav-links">
+                  {navigationData.navigationItems
+                    .sort((a, b) => a.order - b.order)
+                    .map(item => (
+                      <NavLink key={item.id} to={item.path}>{item.label}</NavLink>
+                    ))
+                  }
+                </ul>
+              </nav>
 
-            {/* Mobile Menu Button */}
-            <button 
-              className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
-              onClick={toggleMobileMenu}
-              aria-label="Toggle mobile menu"
-            >
-              <span className="hamburger-line"></span>
-              <span className="hamburger-line"></span>
-              <span className="hamburger-line"></span>
-            </button>
+              {/* Mobile Menu Button */}
+              <button 
+                className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
+                onClick={toggleMobileMenu}
+                aria-label="Toggle mobile menu"
+              >
+                <span className="hamburger-line"></span>
+                <span className="hamburger-line"></span>
+                <span className="hamburger-line"></span>
+              </button>
+            </div>
 
             {/* Mobile Dropdown Menu */}
             <nav className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
@@ -117,6 +120,7 @@ function App() {
             <Route path="/products" element={<Products setShowFooter={setShowFooter} />} />
             <Route path="/projects" element={<Projects setShowFooter={setShowFooter} />} />
             <Route path="/news" element={<News setShowFooter={setShowFooter} />} />
+            <Route path="/news/:id" element={<NewsArticle setShowFooter={setShowFooter} />} />
             <Route path="/about" element={<About setShowFooter={setShowFooter} />} />
             <Route path="/contact" element={<Contact setShowFooter={setShowFooter} />} />
           </Routes>

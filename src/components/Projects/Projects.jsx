@@ -6,6 +6,7 @@ import meetingProjectsData from '../../data/meetingProjects.json';
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(meetingProjectsData.meetingProjects[0]);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [isMobile, setIsMobile] = useState(false);
 
   const categories = ['all', ...new Set(meetingProjectsData.meetingProjects.map(project => project.category))];
   
@@ -30,6 +31,18 @@ export default function Projects() {
       setSelectedProject(categoryProjects[0]);
     }
   };
+
+  // Check if screen is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Handle navigation from home page via URL hash
   useEffect(() => {
@@ -60,18 +73,20 @@ export default function Projects() {
     <div className={styles.projectsPage}>
       <h1 className={styles.title}>项目案例</h1>
       
-      {/* Category Filter */}
-      <div className={styles.categoryFilter}>
-        {categories.map(category => (
-          <button
-            key={category}
-            className={`${styles.categoryButton} ${selectedCategory === category ? styles.active : ''}`}
-            onClick={() => handleCategoryChange(category)}
-          >
-            {category === 'all' ? '全部' : category}
-          </button>
-        ))}
-      </div>
+      {/* Category Filter - Desktop Only */}
+      {!isMobile && (
+        <div className={styles.categoryFilter}>
+          {categories.map(category => (
+            <button
+              key={category}
+              className={`${styles.categoryButton} ${selectedCategory === category ? styles.active : ''}`}
+              onClick={() => handleCategoryChange(category)}
+            >
+              {category === 'all' ? '全部' : category}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Main Content Layout */}
       <div className={styles.mainContentLayout}>
@@ -103,7 +118,7 @@ export default function Projects() {
                 <p className={styles.projectDescription}>{selectedProject.description}</p>
               )}
               
-              {selectedProject.features && selectedProject.features.length > 0 && (
+              {!isMobile && selectedProject.features && selectedProject.features.length > 0 && (
                 <div className={styles.projectFeatures}>
                   <h4 className={styles.featuresTitle}>主要功能：</h4>
                   <ul className={styles.featuresList}>
@@ -121,29 +136,62 @@ export default function Projects() {
           </div>
         )}
 
-        {/* Side-scrolling Thumbnail Gallery */}
-        <div className={`${styles.thumbnailGallery}`}>
-          <h3 className={styles.galleryTitle}>项目列表</h3>
-          <div className={styles.thumbnailContainer}>
-            {filteredProjects.map(project => (
-              <div
-                key={project.id}
-                className={`${styles.thumbnailItem} ${selectedProject?.id === project.id ? styles.selected : ''}`}
-                onClick={() => handleThumbnailClick(project)}
-              >
-                <img 
-                  src={project.thumbnail} 
-                  alt={project.title}
-                  className={styles.thumbnail}
-                />
-                <div className={styles.thumbnailOverlay}>
-                  <span className={styles.thumbnailTitle}>{project.title}</span>
+        {/* Side-scrolling Thumbnail Gallery - Desktop Only */}
+        {!isMobile && (
+          <div className={`${styles.thumbnailGallery}`}>
+            <h3 className={styles.galleryTitle}>项目列表</h3>
+            <div className={styles.thumbnailContainer}>
+              {filteredProjects.map(project => (
+                <div
+                  key={project.id}
+                  className={`${styles.thumbnailItem} ${selectedProject?.id === project.id ? styles.selected : ''}`}
+                  onClick={() => handleThumbnailClick(project)}
+                >
+                  <img 
+                    src={project.thumbnail} 
+                    alt={project.title}
+                    className={styles.thumbnail}
+                  />
+                  <div className={styles.thumbnailOverlay}>
+                    <span className={styles.thumbnailTitle}>{project.title}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
+
+      {/* Mobile Navigation - Outside the card */}
+      {isMobile && (
+        <div className={styles.mobileBottomNav}>
+          <button
+            className={styles.mobileNavButton}
+            onClick={() => {
+              const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject?.id);
+              const prevIndex = currentIndex === 0 ? filteredProjects.length - 1 : currentIndex - 1;
+              handleThumbnailClick(filteredProjects[prevIndex]);
+            }}
+            aria-label="Previous project"
+          >
+            ←
+          </button>
+          <span className={styles.mobileNavIndicator}>
+            {filteredProjects.findIndex(p => p.id === selectedProject?.id) + 1} / {filteredProjects.length}
+          </span>
+          <button
+            className={styles.mobileNavButton}
+            onClick={() => {
+              const currentIndex = filteredProjects.findIndex(p => p.id === selectedProject?.id);
+              const nextIndex = (currentIndex + 1) % filteredProjects.length;
+              handleThumbnailClick(filteredProjects[nextIndex]);
+            }}
+            aria-label="Next project"
+          >
+            →
+          </button>
+        </div>
+      )}
     </div>
   );
 }

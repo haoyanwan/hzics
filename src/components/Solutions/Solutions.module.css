@@ -3,7 +3,7 @@
     min-height: 100vh;
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%, #f8fafc 100%);
     position: relative;
-    padding: 8rem 2rem 4rem;
+    padding: 4rem 2rem;
     transition: all 0.3s cubic-bezier(.07,.74,.49,.98);
     overflow: hidden;
     display: flex;
@@ -299,12 +299,20 @@
 }
 
 .contentPlaceholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    padding: 3rem;
     text-align: center;
-    padding: 4rem 2rem;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    border: 2px dashed rgba(59, 130, 246, 0.3);
-    backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px rgba(31, 38, 135, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .placeholderTitle {
@@ -342,22 +350,6 @@
 
 
 
-@keyframes float {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-10vh) rotate(360deg);
-        opacity: 0;
-    }
-}
 
 
 
@@ -369,24 +361,141 @@
     min-height: 0;
 }
 
-/* For very small screens, adjust padding and spacing but keep side-by-side layout */
-@media (max-width: 768px) {
-    .navigation {
-        padding: 1rem 0.5rem;
-        margin: 1rem 0.5rem 1rem 1rem;
-    }
-    
-    .contentArea {
-        padding: 1rem 0.5rem;
-        margin: 1rem 1rem 1rem 0.5rem;
-    }
-    
-    .categoryItem {
-        font-size: 0.9rem;
-        padding: 0.8rem 0;
-    }
-    
-    .productTitle {
-        font-size: 0.8rem;
-    }
+/* Mobile Solution Header */
+.mobileSolutionHeader {
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
 }
+
+.mobileSolutionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+}
+
+.mobileSolutionCategory {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Mobile Navigation */
+.mobileNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.mobileNavButton {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+
+.mobileNavButton:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+}
+
+.mobileNavButton:active {
+  transform: translateY(0);
+}
+
+.mobileNavIndicator {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #64748b;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+  
+  .contentArea {
+    margin: 0;
+    padding: 0 1rem;
+  }
+  
+  .productsPage {
+    padding: 2rem 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .mobileSolutionHeader {
+    padding: 0.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mobileSolutionTitle {
+    font-size: 1.3rem;
+  }
+  
+  .mobileSolutionCategory {
+    font-size: 0.9rem;
+  }
+  
+  .pdfViewer {
+    height: 60vh;
+    border-radius: 12px;
+  }
+  
+  .contentPlaceholder {
+    padding: 2rem 1rem;
+  }
+  
+  .placeholderTitle {
+    font-size: 1.5rem;
+  }
+  
+  .placeholderText {
+    font-size: 1rem;
+  }
+  
+  .mobileNavigation {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .mobileNavButton {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .mobileNavIndicator {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+

@@ -18,7 +18,7 @@
   height: 7vh;
   min-height: 60px;
   padding: 0;
-  z-index: 100;
+  z-index: 500;
   transition: all 0.7s cubic-bezier(.07,.74,.49,.98);
 }
 
@@ -26,18 +26,40 @@
   display: none !important;
 }
 
-.header-content {
+.header-container {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 5vw;
-  padding: 1vh 2rem;
+  padding: 0.75rem 2rem 0;
+}
+
+.header-content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  height: 100%;
 }
 
 .logo-container {
-  margin-right: 2rem;
+  justify-self: start;
   padding: 0.5rem 0;
 }
+
+.desktop-nav {
+  grid-column: 2;
+  justify-self: center;
+}
+
+/* Empty third column for desktop layout balance */
+@media (min-width: 769px) {
+  .header-content::after {
+    content: '';
+    display: block;
+  }
+}
+
 
 .logo {
   height: 40px;
@@ -47,9 +69,6 @@
 
 
 /* Desktop Navigation */
-.desktop-nav {
-  display: flex;
-}
 
 .nav-links {
   display: flex;
@@ -114,7 +133,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 102;
+  z-index: 1000;
 }
 
 .hamburger-line {
@@ -149,7 +168,7 @@
   backdrop-filter: blur(20px);
   border-top: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-  z-index: 101;
+  z-index: 999;
   transform: translateY(-20px);
   opacity: 0;
   visibility: hidden;
@@ -200,24 +219,6 @@
   backdrop-filter: blur(2px);
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 1240px) {
-  .desktop-nav {
-    display: none;
-  }
-  
-  .mobile-menu-btn {
-    display: flex;
-  }
-  
-  .mobile-nav {
-    display: block;
-  }
-  
-  .header-content {
-    justify-content: space-between;
-  }
-}
 
 /* 页脚样式 */
 .app-footer {
@@ -234,12 +235,94 @@
   color: #1e3a8a; /* 悬停时变为深蓝色 */
 }
 
-/* 主要内容区域 */
+/* 主要内容区域 - Consistent spacing for navigation */
 .app-content {
   flex: 1;
-  padding: 0;
+  padding-top: 7vh; /* Match header height */
   margin: 0;
   width: 100%;
+  min-height: calc(100vh - 7vh);
+}
+
+/* Adjust content spacing for different screen sizes */
+@media (max-width: 768px) {
+  .app-content {
+    padding-top: 60px;
+    min-height: calc(100vh - 60px);
+  }
+}
+
+/* Navigation Responsive Breakpoints */
+@media (max-width: 768px) {
+  /* Mobile Navigation */
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+  
+  .mobile-nav {
+    display: block;
+  }
+  
+  .header-container {
+    width: 100%;
+    padding: 0;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: none;
+    max-width: none;
+    padding: 0.5rem 1.5rem 0;
+  }
+  
+  
+  .app-header {
+    height: 60px;
+    min-height: 60px;
+  }
+  
+  .logo {
+    height: 35px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Tablet Navigation */
+  .header-container {
+    padding: 0.75rem 1.5rem 0;
+  }
+  
+  .nav-links {
+    gap: 0.4rem;
+  }
+  
+  .nav-links a {
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .logo {
+    height: 38px;
+  }
+}
+
+@media (min-width: 1025px) {
+  /* Desktop Navigation */
+  .logo-container {
+    flex: 0 0 auto;
+  }
+  
+  .desktop-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* 深蓝色配色方案:

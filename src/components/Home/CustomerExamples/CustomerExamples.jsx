@@ -5,7 +5,20 @@ import meetingProjectsData from '../../../data/meetingProjects.json';
 
 export default function CustomerExamples() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
+
+  // Check if screen is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Use actual project data from the projects page (first 6 projects)
   const customerExamples = meetingProjectsData.meetingProjects.slice(0, 6).map((project, index) => ({
@@ -22,14 +35,15 @@ export default function CustomerExamples() {
     navigate(`/projects#${projectId}`);
   };
 
-  // Auto-scroll timer
+  // Auto-scroll timer (10 seconds for mobile, longer for desktop)
   useEffect(() => {
+    const interval = isMobile ? 10000 : 5000; // 10 seconds for mobile, 5 seconds for desktop
     const timer = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % customerExamples.length);
-    }, 1000000); // Changed to 10 seconds
+    }, interval);
 
     return () => clearInterval(timer);
-  }, [customerExamples.length]);
+  }, [customerExamples.length, isMobile]);
 
   const handlePrevious = () => {
     setCurrentIndex(prev => 
@@ -79,60 +93,97 @@ export default function CustomerExamples() {
         </p>
       </div>
 
-      <div className={styles.examplesWrapper}>
-        <button 
-          className={styles.navButton}
-          onClick={handlePrevious}
-          aria-label="Previous examples"
-        >
-          ‹
-        </button>
-
-        <div className={styles.examplesContainer}>
+      {isMobile ? (
+        // Mobile: Single centered card
+        <div className={styles.mobileCardContainer}>
           <div 
-            className={styles.examplesTrack}
-            style={{ transform: getTransform() }}
+            className={`${styles.exampleCard} ${styles.mobileCard}`}
+            onClick={() => handleProjectClick(customerExamples[currentIndex].id)}
           >
-            {customerExamples.map((example) => (
-              <div 
-                key={example.id} 
-                className={styles.exampleCard}
-                onClick={() => handleProjectClick(example.id)}
-              >
-                <div className={styles.exampleImageContainer}>
-                  <img src={example.image} alt={example.title} className={styles.exampleImage} />
-                  <div className={styles.exampleOverlay}>
-                    <div className={styles.exampleStats}>
-                      <span className={styles.statItem}>
-                        <strong>{example.category}</strong>
-                      </span>
-                      <span className={styles.statItem}>
-                        <strong>{example.year}</strong> 年
-                      </span>
+            <div className={styles.exampleImageContainer}>
+              <img 
+                src={customerExamples[currentIndex].image} 
+                alt={customerExamples[currentIndex].title} 
+                className={styles.exampleImage} 
+              />
+              <div className={styles.exampleOverlay}>
+                <div className={styles.exampleStats}>
+                  <span className={styles.statItem}>
+                    <strong>{customerExamples[currentIndex].category}</strong>
+                  </span>
+                  <span className={styles.statItem}>
+                    <strong>{customerExamples[currentIndex].year}</strong> 年
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className={styles.exampleContent}>
+              <h3 className={styles.exampleTitle}>{customerExamples[currentIndex].title}</h3>
+              <h4 className={styles.exampleCompany}>{customerExamples[currentIndex].company}</h4>
+              <div className={styles.viewMore}>
+                <span className={styles.viewMoreText}>点击查看详情</span>
+                <span className={styles.viewMoreArrow}>→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        // Desktop: Carousel
+        <div className={styles.examplesWrapper}>
+          <button 
+            className={styles.navButton}
+            onClick={handlePrevious}
+            aria-label="Previous examples"
+          >
+            ‹
+          </button>
+
+          <div className={styles.examplesContainer}>
+            <div 
+              className={styles.examplesTrack}
+              style={{ transform: getTransform() }}
+            >
+              {customerExamples.map((example) => (
+                <div 
+                  key={example.id} 
+                  className={styles.exampleCard}
+                  onClick={() => handleProjectClick(example.id)}
+                >
+                  <div className={styles.exampleImageContainer}>
+                    <img src={example.image} alt={example.title} className={styles.exampleImage} />
+                    <div className={styles.exampleOverlay}>
+                      <div className={styles.exampleStats}>
+                        <span className={styles.statItem}>
+                          <strong>{example.category}</strong>
+                        </span>
+                        <span className={styles.statItem}>
+                          <strong>{example.year}</strong> 年
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.exampleContent}>
+                    <h3 className={styles.exampleTitle}>{example.title}</h3>
+                    <h4 className={styles.exampleCompany}>{example.company}</h4>
+                    <div className={styles.viewMore}>
+                      <span className={styles.viewMoreText}>点击查看详情</span>
+                      <span className={styles.viewMoreArrow}>→</span>
                     </div>
                   </div>
                 </div>
-                <div className={styles.exampleContent}>
-                  <h3 className={styles.exampleTitle}>{example.title}</h3>
-                  <h4 className={styles.exampleCompany}>{example.company}</h4>
-                  <div className={styles.viewMore}>
-                    <span className={styles.viewMoreText}>点击查看详情</span>
-                    <span className={styles.viewMoreArrow}>→</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        <button 
-          className={styles.navButton}
-          onClick={handleNext}
-          aria-label="Next examples"
-        >
-          ›
-        </button>
-      </div>
+          <button 
+            className={styles.navButton}
+            onClick={handleNext}
+            aria-label="Next examples"
+          >
+            ›
+          </button>
+        </div>
+      )}
 
       <div className={styles.navigationDots}>
         {customerExamples.map((_, index) => (
